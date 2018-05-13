@@ -1,8 +1,10 @@
 var view = document.getElementById('inner-view')
 var loader = new Nanobar()
-
-/* heating why the fuck do you need to use ws smh */
-// var ws = new WebSocket('wss://vrrr.strodl.co/ws')
+const ws = new WebSocket("ws://vrrr.strodl.co/ws");
+ws.onmessage = m => {
+    const data = JSON.parse(m.data)
+    if(data.op == "frame") view.src = data.d.stream
+}
 import imageURL from './oops.png'
 
 var audio = document.getElementById('opus-stream')
@@ -19,7 +21,3 @@ $('img').on('error', function() {
 	$('.oopsie-woopsie').css('visibility', 'inherit')
 })
 loader.go(75)
-function updateVideo() {
-	view.src = 'https://vrrr.strodl.co/woosh.jpg?_' + new Date().getTime()
-}
-setInterval(updateVideo, 800)
