@@ -3,25 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="assets/yes.css">
+	<link rel="icon" sizes="512x512" href="./assets/nyoomcar.png">
 	<title>skrrt</title>
 </head>
 <body>
 	<div id="view">
 	<img id="inner-view" src="assets/loading.gif">
-	        <p>Failed to load the stream.</p>
-		<br/>
-		<p>This may be any one of these reasons:<br/>
-		- Camera is not online<br/>
-		- Robot is not online<br/>
-		- Slow internet<br/>
-		Please try again later.
-		</p>
+		<div class="oopsie-woopsie">
+			<h1>OOF!</h1>
+			<p>Something went awkward.<br/>
+			- Your connection is bad<br/>
+			- Server error/downtime<br/>
+			Please try again later.
+			</p>
 	</img>
 	</div>
 	<audio autoplay>
-		<source src="https://vrrr.strodl.co/woosh.opus">
+		<source id="opus-stream" src=".">
 		Your browser fucking sucks, upgrade it.
 	</audio>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/nanobar@0.4.2/nanobar.min.js"></script>
 	<script src="assets/viewer.js"></script>
 </body>
